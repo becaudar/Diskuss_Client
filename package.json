@@ -1,0 +1,9 @@
+{
+  "name": "Diskuss_Client",
+  "version": "0.1.0",
+  "description": "Client pour communiquer avec un serveur Diskuss",
+  "main": "main.js",
+  "repository": "https://github.com/becaudar/Diskuss_Client.git",
+  "author": "Arthur B.",
+  "license": "UNLICENSED"
+}
