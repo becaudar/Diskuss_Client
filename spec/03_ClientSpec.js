@@ -1,12 +1,9 @@
 var User = require('../app/models/client')
 
 describe("Client", function() {
-  it("has version, currentUser", function() {
-    let channel = new Channel("name", "description", "keep", "owner")
-    expect(channel.name).toEqual("name")
-    expect(channel.description).toEqual("description")
-    expect(channel.keep).toEqual("keep")
-    expect(channel.owner).toEqual("owner")
+  it("New Client", function() {
+    let Client = new Client(let user = new User("1234", "Jean"))
+    expect((client.CurrentUser).Nick).toEqual("Jean")
   )}
 
   it("Load, Add and Save Message(s)", function() {
