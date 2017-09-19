@@ -1,0 +1,2 @@
+{ nick: 'Inu', message: 'Salut !', time: '2017-09-09T10:30:59.999Z' }
+{ nick: 'Saru', message: 'Yo !', time: '2017-09-09T10:49:37.999Z' }

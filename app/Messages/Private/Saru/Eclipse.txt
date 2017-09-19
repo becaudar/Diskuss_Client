@@ -1,0 +1,2 @@
+{ nick: 'Saru', message: 'Bonne journée?', time: '2017-08-07T07:31:59.999Z' }
+{ nick: 'Eclipse', message: 'Oui et toi ?', time: '2017-08-07T08:02:37.999Z' }

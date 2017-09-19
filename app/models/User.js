@@ -1,27 +1,32 @@
 class User {
-    constructor(id, nick){
-        this.id = id
-        this.nick = nick
-        this.message = null
-    }
+  constructor(id, nick) {
+    this.id = id
+    this.nick = nick
+    this.messages = null
+  }
 
-    // Lire User.Id
-    static string Id(){
-        return user.id
-    }
+  // Lire User.Id
+  static string Id() {
+    return this.id
+  }
 
-    // Lire User.Nick
-    static string Nick(){
-        return user.nick
-    }
+  // Lire User.Nick
+  static string Nick() {
+    return this.nick
+  }
 
-    // Load, Add & Save message(s) on local
-    static string LoadMessage(){
-        return "Success - message(s) loaded"
-    }
-    static string AddMessage(nick, message, time){
-        return "Success - message added"
-    }
-    static string SaveMessage(){
-        return "Success - message(s) saved"
-    }
+  //Lire User.Messages
+  static ? Messages() {
+    return this.messages
+  }
+
+  // Load, Add & Save message(s) on local
+  static string LoadMessages() {
+    return false
+  }
+  static string AddMessage(nick, message, time) {
+    return false
+  }
+  static string SaveMessages() {
+    return false
+  }
