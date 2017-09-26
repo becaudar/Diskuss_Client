@@ -22,7 +22,6 @@ describe("Client", function() {
         client.ListUsers = [user1, user2, user3]
         expect((client.ListUsers[0]).Id).toEqual("1010")
         expect((client.ListUsers[0]).Nick).toEqual("Nani!")
-
         expect((client.ListUsers[1]).Id).toEqual("2020")
         expect((client.ListUsers[1]).Nick).toEqual("Saru")
         expect((client.ListUsers[2]).Id).toEqual("3030")
@@ -46,9 +45,11 @@ describe("Client", function() {
       })
 
       it("can change the theme", function() {
-        expect(client.ChangeTheme("Blanc")).toEqual()
+        let client = new Client(let user = new User("1568", "Beer"))
+        expect(client.ChangeTheme("Blanc")).toEqual(true)
       })
 
       it("can quit Diskuss", function() {
+        let client = new Client(let user = new User("1497", "Steak"))
         expect(client.QuitDiskuss()).toEqual()
       })

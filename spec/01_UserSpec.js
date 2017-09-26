@@ -14,19 +14,22 @@ describe("User", function() {
     )
   }
 
+  // UserTest is only usable by Dikuss Client
+  // The user isn't able to login with this name
   it("loads messages", function() {
     let user = new User("1234", "UserTest")
+    // Load messages from files ./app/Messages/Private/UserTest/Inu.txt et ./app/Messages/Private/UserTest/Eclipse.txt
     expect(user.LoadMessages()).toBe(true)
     expect(user.messages.length).toBe(2)
     if (user.messages.length === 2) {
-      // Sort les données enregistré dans ./app/Messages/Private/UserTest/Inu.txt
+      // messages from the 1st file (Inu.txt)
       expect(user.messages[0][0].nick).toBe('UserTest')
       expect(user.messages[0][0].message).toBe('salut !')
       expect(user.messages[0][0].time).toBe('09.09.2017 - 10h30')
       expect(user.messages[0][1].nick).toBe('Inu')
       expect(user.messages[0][1].message).toBe('Yo !')
       expect(user.messages[0][1].time).toBe('09.09.2017 - 10h49')
-      // Sort les données enregistré dans ./app/Messages/Private/UserTest/Eclipse.txt
+      //messages from the 2nd file (Eclipse.txt)
       expect(user.messages[1][0].nick).toBe('Eclipse')
       expect(user.messages[1][0].message).toBe('Bonne journée?')
       expect(user.messages[1][0].time).toBe('07.08.2017 - 07h31')
@@ -35,10 +38,12 @@ describe("User", function() {
       expect(user.messages[1][1].time).toBe('07.08.2017 - 08h02')
     }
   })
+
   it("add message", function() {
     let user = new User("1234", "UserTest")
     let message = "Hello!"
     let time = '2000-12-31T23:59:59.999Z'
+    // Add a message in user.Messages
     expect(user.AddMessage('Ghin', message, time)).toBe(true)
     expect(user.Messages[0][0].nick).toBe('Ghin')
     expect(user.Messages[0][0].message).toBe('Hello!')
@@ -47,9 +52,10 @@ describe("User", function() {
 
   it("saves messages", function() {
     let user = new User("1234", "UserTest")
-    let message = "Hello!"
-    let time = '2000-12-31T23:59:59.999Z'
+    let message = "Yo!"
+    let time = '2013-11-22T23:59:59.999Z'
     expect(user.AddMessage('Ghin', message, time)).toBe(true)
+    // Save a message in the local file ./app/Messages/Private/UserTest/Ghin.txt
     expect(user.SaveMessages()).toBe(true)
   })
 })

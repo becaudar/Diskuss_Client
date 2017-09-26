@@ -10,10 +10,6 @@ describe("Server", function() {
         expect(server.Ip).toEqual("127.0.0.1")
       })
 
-      it("", function() {
-
-      })
-
       it("has ListUsers updated", function() {
         let server = new Server("127.0.0.1")
         let client = new Client("1234", "Jean")
@@ -28,8 +24,19 @@ describe("Server", function() {
         expect(client.ListChannels.not.toBeUndefined())
       })
 
+      it("is connected", function() {
+        let server = new Server("127.0.0.1")
+        expect(server.Connect("UserTest")).toEqual(jasmine.any(User));
+      })
+
       it("has notices", function() {
         let server = new Server("127.0.0.1")
-        let client = new Client("1234", "Jean")
+        let user = server.Connect("UserTest")
+        expect(server.Notices).toEqual("");
+      })
 
+      it("is disconnected", function() {
+        let server = new Server("127.0.0.1")
+        let user = server.Connect("UserTest")
+        expect(server.Disconnect).toEqual("Successfully disconnected from the server")
       })
